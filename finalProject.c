@@ -16,14 +16,11 @@ void login(){
     while (1) {
         i = 0;
 
-        // --- USERNAME ---
+
         printf("Username: ");
         scanf("%s", username);
 
-        // Consume leftover newline from scanf
-        // while ((ch = getchar()) != '\n' && ch != EOF);
 
-        // --- PASSWORD ---
         i = 0;
         printf("Password: ");
         while (1) {
@@ -44,7 +41,7 @@ void login(){
         password[i] = '\0';
         printf("\n");
 
-        // --- VALIDATION ---
+  
         if (strcmp(username, user) == 0 && strcmp(password, pass) == 0) {
             printf("Valid user\n");
             break;
