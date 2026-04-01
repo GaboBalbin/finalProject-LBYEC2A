@@ -265,7 +265,7 @@ void menu(){
 
 // Main
 int main(){
-    printf("Restaurant Name\n\n");
+    printf("Boks\n\n");
     login();
     menu();
     printf("Thank you!");
