@@ -44,7 +44,7 @@ void login(){
 
         // Check validity
         if (strcmp(username, user) == 0 && strcmp(password, pass) == 0) {
-            printf("Valid user\n");
+            printf("Valid user\n\n");
             break;
         } else {
             printf("Invalid user\n\n");
@@ -55,14 +55,14 @@ void login(){
 // Option to take by the user
 int action(){
     int options;
-    printf("Resutation options\n\n");
+    printf("Restaurant options\n\n");
 
     printf("1 Back to Menu\n");
     printf("2 Take Order\n");
     printf("3 Exit\n\n");
-    printf("Option: ");
     // Check if option taken is valid
     while(1){
+        printf("Option: ");
         int input = scanf("%d", &options);
         if(input != 1){
             printf("Invalid input\n");
@@ -73,7 +73,7 @@ int action(){
                 break;
             }
         }
-
+            
             continue;
         }
         switch (options)
@@ -139,7 +139,7 @@ int takeOrder(int itemNum[], int itemPrice[], char itemNames[][100]){
         continue;
     }   
         // Check if number inputted is actually in the menu
-        else if(order[orderIteration] < 1 || order[orderIteration] > 2){
+        else if(order[orderIteration] < 1 || order[orderIteration] > 20){
             printf("Invalid item number\n\n");
             continue;
         }
@@ -205,15 +205,38 @@ int takeOrder(int itemNum[], int itemPrice[], char itemNames[][100]){
 void menu(){
     char press;
     int userChoice;
-    int itemNum[100] = {1, 2};
-    int itemPrice[100] = {100, 200};
-    char itemNames[100][100] = {"test 1", "test 2"};
+    int itemNum[100] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+    11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
+    int itemPrice[100] = {20, 80, 85, 90, 90, 150, 100, 120, 130, 120, 
+    150, 120, 110, 150, 160, 60, 60, 30, 20, 15};
+    char itemNames[100][100] = {
+        "Tiny Burger", 
+        "Jumbo Burger", 
+        "Turkey Burger", 
+        "Chicken Burger", 
+        "BBQ Burger", 
+        "Banquet Burger", 
+        "Chili Burger", 
+        "California Burger", 
+        "Jucy Lucy", 
+        "Rice Burger", 
+        "Salmon Burger", 
+        "Slopper", 
+        "Slug Burger", 
+        "Veggie Burger", 
+        "Teriyaki Burger", 
+        "Big Fries", 
+        "Mojos", 
+        "Large Drinks", 
+        "Water", 
+        "Extra Cheese"};
 
     // Prints the menu
     while(1){
         printf("Menu\n\n");
-        for(int i = 0; i < 2; i++){
-            printf("%d %s %dPHP\n", itemNum[i], itemNames[i], itemPrice[i]);
+        for(int i = 0; i < 10; i++){
+            printf("%-3d %-15s %5dPHP\t", itemNum[i], itemNames[i], itemPrice[i]);
+            printf("%-3d %-15s %5dPHP\n", itemNum[i + 10], itemNames[i + 10], itemPrice[i + 10]);
         }
         
         printf("Press any key to continue...\n\n");
